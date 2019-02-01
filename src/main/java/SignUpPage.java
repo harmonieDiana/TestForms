@@ -14,6 +14,9 @@ public class SignUpPage {
     By checkBox = By.id("261506110b51b1b313f02a2fe7df28dd");
     By submitButton = By.id("zakaz_compred_send");
 
-
+    public SignUpPage typeName(String name){
+        driver.findElement(nameField).sendKeys(name);
+        return this;
+    }
 
 }
