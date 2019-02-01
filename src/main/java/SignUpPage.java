@@ -19,4 +19,24 @@ public class SignUpPage {
         return this;
     }
 
+    public SignUpPage typeTel (String tel){
+        driver.findElement(telField).sendKeys(tel);
+        return this;
+    }
+
+    public SignUpPage typeEmail (String email){
+        driver.findElement(emailField).sendKeys(email);
+        return this;
+    }
+
+    public SignUpPage setCheckBox(){
+        driver.findElement(checkBox).click();
+        return this;
+    }
+
+    public SignUpPage clickSubmitButton(){
+        driver.findElement(submitButton).click();
+        return this;
+    }
+
 }

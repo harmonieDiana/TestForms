@@ -24,11 +24,14 @@ public class SignUpPageTest {
 
     @Test
     public void TypeName(){
-        SignUpPage newSignUpPage = signUpPage.typeName("test");
+        SignUpPage newSignUpPage = signUpPage.typeName("test")
+                .typeEmail("test@test.ru")
+                .typeTel("111111111")
+                .clickSubmitButton();
     }
 
     @After
     public void tearDown(){
-        driver.quit();
+//        driver.quit();
     }
 }
