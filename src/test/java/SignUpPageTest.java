@@ -24,14 +24,13 @@ public class SignUpPageTest {
         signUpPage = new SignUpPage(driver);
     }
 
+
+
     @Test
-    public void TypeName(){
-        SignUpPage newSignUpPage = signUpPage
-                //.typeName("test")
-                .typeEmail("test@test.ru")
-                .typeTel("111111111")
-                .clickSubmitButton();
-        Assert.assertTrue(signUpPage.driver.findElement(By.className("error ")).isDisplayed());
+    public void FillInFormZakaz(){
+        SignUpPage newSignUpPage = signUpPage.fllInForm("", "", "");
+        String error = signUpPage.getErrorText();
+        Assert.assertEquals("Поле Контактный телефон не заполнено", error);
     }
 
     @After

@@ -13,7 +13,8 @@ public class SignUpPage {
     By telField = By.xpath("//*[@id=\"zakaz_compred\"]/input[8]");
     By emailField = By.xpath("//*[@id=\"zakaz_compred\"]/input[9]");
     By checkBox = By.id("261506110b51b1b313f02a2fe7df28dd");
-    By submitButton = By.id("zakaz_compred_send");
+    By submitButton = By.xpath("//*[@id=\"zakaz_compred_send\"]");
+    By error = By.xpath("//*[@id=\"zakaz_compred\"]/p[2]");
     By callbackButton = By.className("popup-with-zoom-anim");
     By nameFieldHeader = By.xpath("//*[@id=\"header_zakaz_zvonka\"]/input[6]");
     By telFieldHeader = By.xpath("//*[@id=\"header_zakaz_zvonka\"]/input[8]");
@@ -30,35 +31,19 @@ public class SignUpPage {
     By checkBoxBottom = By.id("25be56aa945d2dbd2341a662b0d25f00");
     By submitButtonBottom = By.id("otpravka_zayavki_send");
 
-    public SignUpPage typeName(String name){
+
+
+    public SignUpPage fllInForm (String name, String tel, String email){
         driver.findElement(nameField).sendKeys(name);
-        return this;
-    }
-
-    public SignUpPage typeTel (String tel){
         driver.findElement(telField).sendKeys(tel);
-        return this;
-    }
-
-    public SignUpPage typeEmail (String email){
         driver.findElement(emailField).sendKeys(email);
-        return this;
-    }
-
-    public SignUpPage setCheckBox(){
-        driver.findElement(checkBox).click();
-        return this;
-    }
-
-    public SignUpPage clickSubmitButton(){
         driver.findElement(submitButton).click();
         return this;
     }
 
-    public SignUpPage clickCallbackButton(){
-        driver.findElement(callbackButton).click();
-        return this;
+    public String getErrorText(){
 
+        return driver.findElement(error).getText();
     }
 
 }
