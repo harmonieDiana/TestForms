@@ -32,7 +32,7 @@ public class FormsTest {
     public void fillInRightForm(){
         mainPage = new MainPage();
         mainPage.open();
-        mainPage.rightForm("test", "222 2222222", "test@test.ru");
+        mainPage.rightForm("test", "222 2222222", "t@test.ru");
         $(By.className("error ")).shouldBe(Condition.visible);
     }
 }
