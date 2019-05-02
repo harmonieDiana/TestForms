@@ -30,6 +30,9 @@ public class FormsTest {
 
     @Test
     public void fillInRightForm(){
-
+        mainPage = new MainPage();
+        mainPage.open();
+        mainPage.rightForm("test", "222 2222222", "test@test.ru");
+        $(By.className("error ")).shouldBe(Condition.visible);
     }
 }
