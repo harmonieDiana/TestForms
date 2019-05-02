@@ -27,4 +27,9 @@ public class FormsTest {
         mainPage.rightForm("", "", "");
         $(By.className("red")).shouldHave(Condition.text("Поле Контактный телефон не заполнено"));
     }
+
+    @Test
+    public void fillInRightForm(){
+
+    }
 }
